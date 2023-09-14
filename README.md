@@ -1,2 +1,2 @@
-# portfolio
-Russell personal portfolio
+# Personal Portfolio
+This is Russell's personal portfolio
