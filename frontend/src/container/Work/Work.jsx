@@ -1,5 +1,5 @@
-import React from 'react';
-import'./Work.scss';
+import React, { useEffect, useState }from 'react';
+import'./Work.scss'; 
 
 
 const Work = () => {
