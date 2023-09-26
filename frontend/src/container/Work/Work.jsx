@@ -25,7 +25,19 @@ const Work = () => {
   
 
   const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{y:100, opacity:0}]);
 
+    setTimeout(() => {
+      setAnimateCard([{y:0, opacity:1}]);
+
+      if (item === 'All'){
+        setFilterWorks(works);
+      }
+      else{
+        setFilterWorks(works.filter((works) => works.tags.includes(item)));
+      }
+    }, 500);
   }
 
   return (
@@ -47,7 +59,7 @@ const Work = () => {
       <motion.div
         animate={animateCard}
         transition={{ transition:0.5, delayChildren:0.5 }}
-        className='app__work-portofolio'
+        className='app__work-portfolio'
       >
         {filterWorks.map((work, index) => (
           <div className='app__work-item app__flex' key={index}>
