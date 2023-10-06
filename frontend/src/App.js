@@ -2,6 +2,7 @@ import React from 'react';
 import {About, Footer, Skills,Testimonial,Header,Work} from './container';
 import {Navbar} from './components';
 import './App.scss';
+import 'react-tooltip/dist/react-tooltip.css';
 
 // shortcut: rafce to create react code skeleton
 
