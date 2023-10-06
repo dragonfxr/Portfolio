@@ -1,12 +1,12 @@
 import React, { useEffect, useState }from 'react';
 import { motion } from 'framer-motion';
-import { Tooltip as ReactTooltip } from 'react-tooltip'// new, need installation
-import { AppWrap } from '../../wrapper';
+// import { Tooltip as ReactTooltip } from 'react-tooltip'// new, need installation
+// tooltip has problems
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client} from '../../client';
 import 'react-tooltip/dist/react-tooltip.css';
 
 import'./Skills.scss';
-
 
 const Skills = () => {
   const [experience, setExperience] = useState([]);
@@ -25,16 +25,15 @@ const Skills = () => {
       .then((data) => {
         setSkills(data);
     })
+
   }, [])
 
   return (
     <>
       <h2 className='head-text'>Skills & Experience</h2>
       <div className='app__skills-container'>
-        <motion.div
-          className='app__skills-list'
-        >
-          {skills?.map((skill) => (
+        <motion.div className='app__skills-list'>
+          {skills.map((skill) => (
             <motion.div
               whileInView={{opacity:[0,1]}}
               transition={{duration:0.5}}
@@ -50,7 +49,7 @@ const Skills = () => {
         </motion.div>
         
         <motion.div className='app__skills-exp'>
-          {experience?.map((experience) => (
+          {experience.map((experience) => (
             <motion.div
               className='app__skills-exp-item'
               key={experience.year}
@@ -59,27 +58,28 @@ const Skills = () => {
                 <p className='bold-text'>{experience.year}</p>
               </div>
               <motion.div className='app__skills-exp-works'>
-                {experience?.works?.map((work) => (
+                {experience.works.map((work) => (
                   <>
                     <motion.div
-                      whileInView={{opacity:[0,1]}}
-                      transition={{duration:0.5}}
-                      className='app__skills-exp-works'
-                      data-tooltip-content={work.desc} // react tool tip V5 (data-tip used in V4)
-                      data-tooltip-id={work.name}// data-for used in V4
+                      whileInView={{ opacity:[0,1] }}
+                      transition={{ duration:0.5 }}
+                      className='app__skills-exp-work'
+                      // data-tooltip-content={work.desc}// react tool tip V5 (data-tip used in V4)
+                      // data-tooltip-id={work.name}// data-for used in V4
                       key={work.name}
                     >
                       <h4 className='bold-text'>
                         {work.name}
                       </h4>
                       <p className='p-text'>{work.company}</p>
+                      <p className='p-text'>{work.desc}</p>
                     </motion.div>
-                    <ReactTooltip
+                    {/* <ReactTooltip
                       id={work.name}
-                      effect="solid"
+                      // effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
-                    />
+                    /> */}
                   </>
                 ))}
               </motion.div>
@@ -91,4 +91,8 @@ const Skills = () => {
   )
 }
 
-export default AppWrap(Skills, 'skills');
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'),
+  'skills',
+  'app__whitebg',
+);
