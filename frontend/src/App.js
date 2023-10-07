@@ -1,5 +1,5 @@
 import React from 'react';
-import {About, Footer, Skills,Testimonial,Header,Work} from './container';
+import {About, Footer, Skills, Header, Work} from './container';
 import {Navbar} from './components';
 import './App.scss';
 import 'react-tooltip/dist/react-tooltip.css';
@@ -14,7 +14,7 @@ const App = () => {
         <About/>
         <Work/>
         <Skills/>
-        <Testimonial/>
+        {/* <Testimonial/> */}
         <Footer/>
     </div>
   )

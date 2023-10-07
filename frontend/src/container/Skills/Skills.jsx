@@ -10,14 +10,13 @@ import'./Skills.scss';
 
 const Skills = () => {
   const [experience, setExperience] = useState([]);
-  const [skills, setSkills] = useState([])
+  const [skills, setSkills] = useState([]);
   useEffect(() => {
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
 
     client.fetch(query)
       .then((data) => {
-        console.log(data);
         setExperience(data);
     })
 
