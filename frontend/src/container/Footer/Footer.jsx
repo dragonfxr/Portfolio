@@ -43,7 +43,7 @@ const Footer = () => {
       <div className='app__footer-cards'>
         <div className='app__footer-card'>
           <img src={images.email} alt="email" />
-          <a href={"mailto:rfeng422@gmail.com"} className='p-text'>rfeng422@gmail.com</a>
+          <a href={"mailto:russell.feng.au@gmail.com"} className='p-text'>russell.feng.au@gmail.com</a>
           {/* mailto: 是一个 URI（统一资源标识符）方案，它用于创建电子邮件链接。当用户点击一个带有 mailto: 的链接时，它会尝试打开用户的默认邮件客户端，并创建一封新的电子邮件，其中收件人地址已预填为 mailto: 后面的电子邮件地址。 */}
         </div>
         <div className='app__footer-card'>
