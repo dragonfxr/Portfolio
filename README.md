@@ -13,7 +13,6 @@ https://russell-feng.netlify.app/
 - JavaScript
 - SASS
 - React
-- Redux
 - Sanity
 - Deployment
 - Higher-Order Components
