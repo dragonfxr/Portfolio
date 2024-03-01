@@ -1,14 +1,17 @@
 # Personal Portfolio
 This is Russell's personal portfolio.
+
 https://russell-feng.netlify.app/
 
-1. frontend:
+## How to install and run
+
+### 1. Frontend:
    
    `npm install`
 
    `npm start`
 
-2. backend:
+### 2. Backend:
 
    `set-ExecutionPolicy RemoteSigned`
    
