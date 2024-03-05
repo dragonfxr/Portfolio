@@ -22,7 +22,7 @@ const Work = () => {
         setFilterWorks(data);
       })
   }, [])
-  
+
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -45,7 +45,7 @@ const Work = () => {
       <h2 className='head-text'>My creative <span>Portfolio</span></h2>
 
       <div className='app__work-filter'>
-        {['UI/UX', 'Web App', 'React JS', 'Flask', 'All'].map((item, index) => (
+        {['UI/UX', 'Web App', 'React JS', 'Django', 'Python', 'Engineering', 'All'].map((item, index) => (
           <div 
             key={index} 
             onClick={() => handleWorkFilter(item)}
